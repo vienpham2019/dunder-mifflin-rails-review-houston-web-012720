@@ -1,0 +1,15 @@
+<h1><%= @dog.name %> information page</h1>
+<h3>Breed</h3>
+<p><%= @dog.breed %></p>
+<h3>Age</h3>
+<p><%= @dog.age %></p>
+<h3>Employees</h3>
+<ul>
+<% @dog.employees.each do |employee| %>
+    <li>
+        <%= link_to employee.full_name, employee_path(employee) %> 
+    </li><br>
+<% end %> 
+</ul>
+<br>
+<%= button_to "Dogs page", dogs_path, method: :get %>

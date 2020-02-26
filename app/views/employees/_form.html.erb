@@ -1,0 +1,35 @@
+
+
+<%= form_with model: @employee do |f| %>
+    <% if flash[:errors] %> 
+    <ul>
+        <% flash[:errors].each do |e| %> 
+        <li><%= e %></li>
+        <% end %> 
+        </ul>
+    <% end %>
+    <%= f.label "First name" %><br> 
+    <%= f.text_field :first_name %>
+    <br>
+    <%= f.label "Last name" %><br> 
+    <%= f.text_field :last_name %>
+    <br>
+    <%= f.label "Alias" %><br> 
+    <%= f.text_field :alias%>
+    <br>
+    <%= f.label "Title" %><br> 
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label "Office" %><br> 
+    <%= f.text_field :office %>
+    <br>
+    <%= f.label "Image" %><br> 
+    <%= f.text_field :img_url %>
+    <br>
+    <%= f.label "Dog" %><br> 
+    <%= f.collection_select :dog_id, @dogs, :id, :name %>
+    <br>
+    <%= f.submit %> 
+<% end %> 
+<br>
+<%= button_to "Employees page", employees_path, method: :get %>

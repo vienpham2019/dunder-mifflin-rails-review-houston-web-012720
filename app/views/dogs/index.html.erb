@@ -1,0 +1,8 @@
+<h1>Dogs lists</h1>
+<ul>
+    <% @dogs.each do |dog| %> 
+        <li><%= link_to dog.name, dog_path(dog) %></li><br>
+    <% end %> 
+</ul>
+<br>
+<%= button_to "Employees page", employees_path, method: :get %>

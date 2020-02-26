@@ -1,0 +1,16 @@
+<h1><%= @employee.full_name %> information page</h1>
+<img src="<%= @employee.img_url %>" alt="image" style="width: 400px">
+<h4>Alias</h4>
+<p><%= @employee.alias %></p>
+<h4>Title</h4>
+<p><%= @employee.title %></p>
+<h4>Office</h4>
+<p><%= @employee.office %></p>
+<h4>Dog</h4>
+<p><%= link_to @employee.dog.name, dog_path(@employee.dog) %></p>
+<br>
+<%= button_to "Employees page", employees_path, method: :get %>
+<br>
+<%= button_to "Edit", edit_employee_path, method: :get %>
+<br>
+<%= button_to "Delete Employee", employee_path(@employee), method: :delete %>
